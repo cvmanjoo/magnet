@@ -2,22 +2,21 @@
 <html>
 
 	<head>
-		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 		<title>Torrage</title>
+		
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Voces' rel='stylesheet' type='text/css'>
+
 	</head>
 	
 	<body>
 		<h1>Torrage</h1>
 		<form action="index.php" method="get">
 			<input type="text" width="600" name="infohash"/>
-			
-			
 			<input type="submit" value="Get .torrent"/>
-			
-			
 				
-			
-			
 		</form>
 		
 		<?php 
@@ -33,13 +32,8 @@
 			
 			echo $url;
 						
-			header( 'Location: '.$url ) ;  //Internet   
-
+			header( 'Location: '.$url ) ;  //Internet 
 	   	}
-	   	
-
-		
-		
 		?>
 
 </html>
