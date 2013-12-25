@@ -1,9 +1,42 @@
-/* CSS layout */
+﻿/* CSS layout */
 
 body{
 	margin: 5px;
 	padding: 5px;
-	font-family: 'Voces', cursive;
+	font-family: monospace;
 }
 
-/*http://www.tdl.com/~jrb/jrb7/css_textfield0.html */
+input[type=text] {
+	width: 420px;
+	height: 30px;
+	padding: 1px;
+	
+	font-family:monospace;
+	font-size:large;
+}
+
+input[type=submit] {
+		
+	font-family:monospace;
+	font-size:large;
+
+	border: 1px solid #777777;
+	background: #6e9e2d;
+	color: white;
+	font: bold 11px 'Trebuchet MS';
+	padding: 4px;
+	height: 30px;
+	cursor: pointer;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+*/}
+
+
+
+
+/*
+
+http://www.tdl.com/~jrb/jrb7/css_textfield0.html
+http://www.red-team-design.com/style-an-input-button
+
+*/
