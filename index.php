@@ -3,11 +3,8 @@
 
 	<head>
 		<title>Torrage</title>
-		
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-		
 		<link href="style.css" rel="stylesheet" type="text/css" />
-
 	</head>
 	
 	<body>
@@ -36,7 +33,6 @@
 	   		}
 	   	}
 		?>
-		<label></label>
 	</body>
 
 </html>													   
