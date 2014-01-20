@@ -15,10 +15,13 @@
             <span>Torrage</span>
             <input type="radio" name="site" value="torcache"/>
             <span>Torcache</span>
+            <input type="radio" name="site" value="zoink"/>
+            <span>Zoink</span>
         </form>		
         <?php
         //http://torrage.com/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
         //http://torcache.net/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
+        //http://zoink.it/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
 
         if (filter_has_var(INPUT_GET, 'infohash') && filter_has_var(INPUT_GET, 'site'))
         {
@@ -33,9 +36,14 @@
                     $url = "http://torrage.com/torrent/" . $infohash . ".torrent";
                     header('Location: ' . $url);  //Internet 
                 }
-                else
+                else if ($site == 'torcache')
                 {
                     $url = "http://torcache.net/torrent/" . $infohash . ".torrent";
+                    header('Location: ' . $url);  //Internet 
+                }
+                else
+                {
+                    $url = "http://zoink.it/torrent/" . $infohash . ".torrent";
                     header('Location: ' . $url);  //Internet 
                 }
             }
