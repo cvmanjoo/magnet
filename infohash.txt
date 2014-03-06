@@ -2,11 +2,12 @@ http://torrage.com/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
 http://torcache.net/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
 http://zoink.it/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
 
-
-
-
 ubuntu-13.10-desktop-i386.iso --> 597A92F6EEED29E6028B70B416C847E51BA76C38
-
 non exist --> 886D8CA336A8BBE7C1B19C8B5D23729496F7A48F
-
 xbmc-12.3.exe --> F948DD1E2A216B018FC3B5BA3FB4B1A63F61F06B
+
+http://mgnet.me/api.html
+ 
+magnet:?xt=urn:btih:FCB3DA0B7978EFC6157791D7B3224826FE749C09&dn=Nikita.1x01.(HDTV-LOL)&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.publicbt.com:80&tr=udp://tracker.istole.it:80&tr=udp://open.demonii.com:80&tr=udp://tracker.coppersurfer.tk:80
+
+magnet:?xt=urn:btih:<info-hash>&dn=<name>&tr=<tracker-url>&ws=<webseed>
