@@ -1,3 +1,45 @@
+<?php
+/************************
+  http://torrage.com/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
+  http://torcache.net/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
+  http://zoink.it/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
+  http://istoretor.com/fdown.php?hash=640FE84C613C17F663551D218689A64E8AEBEABE
+ *************************/
+if(filter_has_var(INPUT_GET, 'infohash') && filter_has_var(INPUT_GET, 'site'))
+{
+    $infohash = filter_input(INPUT_GET, 'infohash');
+    $site = filter_input(INPUT_GET, 'site');
+    if(strlen($infohash) == 40 && ctype_xdigit($infohash))
+    {
+        $infohash = strtoupper($infohash);
+        //echo "Debug:$url = ".$url."<br />";
+        if($site == 'torrage')
+        {
+            $url = "http://torrage.com/torrent/" . $infohash . ".torrent";
+            header('Location: ' . $url);  //Internet 
+        }
+        else if($site == 'torcache')
+        {
+            $url = "http://torcache.net/torrent/" . $infohash . ".torrent";
+            header('Location: ' . $url);  //Internet 
+        }
+        else if($site == 'istoretor')
+        {
+            $url = "http://istoretor.com/fdown.php?hash=" . $infohash . ".torrent";
+            header('Location: ' . $url);  //Internet 
+        }
+        else
+        {
+            $url = "http://zoink.it/torrent/" . $infohash . ".torrent";
+            header('Location: ' . $url);  //Internet 
+        }
+    }
+    else
+    {
+        echo "<span>Invalid INFO_HASH</span>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,47 +62,10 @@
             <input type="radio" name="site" value="istoretor"/>
             <span>iStoreTor</span>
         </form>		
-        <?php
-        /************************
-          http://torrage.com/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
-          http://torcache.net/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
-          http://zoink.it/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
-         * http://istoretor.com/fdown.php?hash=640FE84C613C17F663551D218689A64E8AEBEABE
-        *************************/
-        if(filter_has_var(INPUT_GET, 'infohash') && filter_has_var(INPUT_GET, 'site'))
-        {
-            $infohash = filter_input(INPUT_GET, 'infohash');
-            $site = filter_input(INPUT_GET, 'site');
-            if(strlen($infohash) == 40 && ctype_xdigit($infohash))
-            {
-                $infohash = strtoupper($infohash);
-                //echo "Debug:$url = ".$url."<br />";
-                if($site == 'torrage')
-                {
-                    $url = "http://torrage.com/torrent/" . $infohash . ".torrent";
-                    header('Location: ' . $url);  //Internet 
-                }
-                else if($site == 'torcache')
-                {
-                    $url = "http://torcache.net/torrent/" . $infohash . ".torrent";
-                    header('Location: ' . $url);  //Internet 
-                }
-                else if($site == 'istoretor')
-                {
-                    $url = "http://istoretor.com/fdown.php?hash=" . $infohash . ".torrent";
-                    header('Location: ' . $url);  //Internet 
-                }
-                else
-                {
-                    $url = "http://zoink.it/torrent/" . $infohash . ".torrent";
-                    header('Location: ' . $url);  //Internet 
-                }
-            }
-            else
-            {
-                echo "<span>Invalid INFO_HASH</span>";
-            }
-        }
-        ?>
+        <br>
+        <br>
+        <a href="magnet.php">Create Magnet link</a>
+        
+        
     </body>
 </html>													   
