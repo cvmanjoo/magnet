@@ -1,71 +1,73 @@
 <?php
-/************************
-  http://torrage.com/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
-  http://torcache.net/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
-  http://zoink.it/torrent/640FE84C613C17F663551D218689A64E8AEBEABE.torrent
-  http://istoretor.com/fdown.php?hash=640FE84C613C17F663551D218689A64E8AEBEABE
- *************************/
-if(filter_has_var(INPUT_GET, 'infohash') && filter_has_var(INPUT_GET, 'site'))
+if(filter_has_var(INPUT_GET, 'submit'))
 {
     $infohash = filter_input(INPUT_GET, 'infohash');
-    $site = filter_input(INPUT_GET, 'site');
+    $name = filter_input(INPUT_GET, 'tname');
+    $trackers = filter_input(INPUT_GET, 'trackers');
+
     if(strlen($infohash) == 40 && ctype_xdigit($infohash))
     {
-        $infohash = strtoupper($infohash);
-        //echo "Debug:$url = ".$url."<br />";
-        if($site == 'torrage')
+        $magnetlink = "magnet:?xt=urn:btih:" . $infohash;
+
+        if($name != "")
         {
-            $url = "http://torrage.com/torrent/" . $infohash . ".torrent";
-            header('Location: ' . $url);  //Internet 
+            $magnetlink = $magnetlink . "&dn=" . $name;
         }
-        else if($site == 'torcache')
+        if($trackers != "")
         {
-            $url = "http://torcache.net/torrent/" . $infohash . ".torrent";
-            header('Location: ' . $url);  //Internet 
-        }
-        else if($site == 'istoretor')
-        {
-            $url = "http://istoretor.com/fdown.php?hash=" . $infohash . ".torrent";
-            header('Location: ' . $url);  //Internet 
-        }
-        else
-        {
-            $url = "http://zoink.it/torrent/" . $infohash . ".torrent";
-            header('Location: ' . $url);  //Internet 
+            $magnetlink = $magnetlink . "&tr=" . $trackers;
         }
     }
-    else
-    {
-        echo "<span>Invalid INFO_HASH</span>";
-    }
+    //$magnetlink = "magnet:?xt=urn:btih:" .$infohash . "&dn=" . $name . "&tr=" . $trackers;
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Torrage</title>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <title>Magnet</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
-        <h1>Torrage</h1>
-        <form action="index.php" method="get">
-            <input type="text" name="infohash"/>
-            <input type="submit" value="Get .torrent"/>
-            <br />
-            <input type="radio" name="site" value="torrage" checked/>
-            <span>Torrage</span>
-            <input type="radio" name="site" value="torcache"/>
-            <span>Torcache</span>
-            <input type="radio" name="site" value="zoink"/>
-            <span>Zoink</span>
-            <input type="radio" name="site" value="istoretor"/>
-            <span>iStoreTor</span>
-        </form>		
-        <br>
-        <br>
-        <a href="magnet.php">Create Magnet link</a>
-        
-        
-    </body>
-</html>													   
+      <div class="w3-card-4">
+        <div class="w3-container w3-green">
+          <h2>Magnet Info</h2>
+        </div>
+        <form class="w3-container" name="form1" method="get" action="#">
+          <p>
+            <label>Infohash</label>
+            <input class="w3-input" type="text" name="infohash" placeholder="Hash of the Torrent" />
+          </p>
+          <p>
+            <label>Name</label>
+            <input class="w3-input" type="text" name="tname" placeholder="Name of the Torrent" />
+          </p>
+          <p>
+            <label>Trackers</label>
+            <input class="w3-input" type="text" name="trackers" placeholder="Trackers" />
+          </p>
+          <p>
+            <input class="w3-button w3-green" type="submit" name="submit" value="Create"/>
+            <input class="w3-button w3-green" type="reset" name="reset" value="Reset">
+          </p>
+        </form>
+    </div>
+    <?php if(isset($magnetlink))
+    {
+      ?>
+      <div class="w3-panel w3-pale-green w3-leftbar w3-border-green">
+          <p><a href = "<?php echo $magnetlink; ?>"><?php echo $magnetlink; ?></a></p>
+      </div>
+      <?php
+    }
+    else {
+      ?>
+      <div class="w3-panel w3-pale-green w3-leftbar w3-border-green">
+          <p>Enter Some Torrent Info Hash</p>
+      </div>
+      <?php
+    }
+    ?>
+  </body>
+</html>
