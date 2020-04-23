@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Magnet</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="w3-card-4">
+            <div class="w3-container w3-green">
+                <h2>Magnet Info</h2>
+            </div>
+            <form class="w3-container" name="magnet" method="get" action="#">
+                <p>
+                    <label>Infohash</label>
+                    <input class="w3-input" type="text" name="infohash" placeholder="Hash of the Torrent Ex: DA39A3EE5E6B4B0D3255BFEF95601890AFD80709" />
+                </p>
+                <p>
+                    <label>Name</label>
+                    <input class="w3-input" type="text" name="tname" placeholder="Name of the Torrent Ex:Linux 5.7" />
+                </p>
+                <p>
+                    <label>Trackers</label>
+                    <textarea class="w3-input" name="trackers" placeholder="Trackers Ex: udp://tracker.opentrackr.org:1337/announce"></textarea>
+                </p>
+                <p>
+                    <label>Webseeds</label>
+                    <input class="w3-input" type="text" name="webseeds" placeholder="Web Seeds Ex: http://example.com/linux.iso" />
+                </p>
+                <p>
+                    <input class="w3-button w3-green" type="submit" name="submit" value="Create" />
+                    <input class="w3-button w3-green" type="reset" name="reset" value="Reset">
+                </p>
+            </form>
+        </div>
+        <script type="text/javascript">
+            magnet.onsubmit = async (e) => {
+                e.preventDefault();
+
+                $(document).ready 
+
+        </script>
+    </body>
+</html>

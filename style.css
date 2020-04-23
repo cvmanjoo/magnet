@@ -1,0 +1,39 @@
+
+/* 
+    Created on : 10 Jun, 2018, 9:23:39 PM
+    Author     : Manjunath CV
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#magnet {
+    font-family: 'Roboto Mono', monospace;
+}
+
+section {
+    margin: auto;
+    width: 850px;
+}
+
+footer {
+    width:100%;
+    text-align: center;
+}
+
+
+
+/* Responsive layout - makes the two columns/boxes 
+   stack on top of each other instead of next to 
+   each other, on small screens */
+@media (max-width: 850px) {
+    section {
+        width: 95%;
+    }
+
+
+}
