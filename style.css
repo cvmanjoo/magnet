@@ -4,10 +4,12 @@
     Author     : Manjunath CV
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
+body, h2 {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     
 }
 
@@ -26,7 +28,6 @@ footer {
 }
 
 
-
 /* Responsive layout - makes the two columns/boxes 
    stack on top of each other instead of next to 
    each other, on small screens */
@@ -34,6 +35,4 @@ footer {
     section {
         width: 95%;
     }
-
-
 }
